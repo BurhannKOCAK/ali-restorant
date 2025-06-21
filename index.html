@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ali'nin Restoranı</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-blue-50 text-gray-800 font-sans">
+
+  <header class="bg-cover bg-center h-72 flex items-center justify-center text-white text-center" 
+          style="background-image: url('https://source.unsplash.com/1600x900/?seaside,restaurant');">
+    <div class="bg-black bg-opacity-60 p-6 rounded-xl">
+      <h1 class="text-4xl font-bold">Ali'nin Restoranı</h1>
+      <p class="text-lg mt-2">Menümüzü görmek için başlıklara tıklayın</p>
+    </div>
+  </header>
+
+  <main class="max-w-2xl mx-auto p-6" id="menu">
+    <h2 class="text-3xl font-bold text-center text-blue-900 mb-8">Menü</h2>
+
+    <div class="space-y-4">
+
+      <section class="border rounded-lg">
+        <button onclick="toggleMenu('baslangic')" class="w-full text-left px-4 py-3 bg-blue-100 font-semibold text-blue-900">
+          🥗 Başlangıçlar
+        </button>
+        <div id="baslangic" class="hidden px-4 py-2 bg-white space-y-2">
+          <div class="flex justify-between border-b pb-1">Ezine Peynirli Roka Salatası <span>90₺</span></div>
+          <div class="flex justify-between border-b pb-1">Kalamar Tava <span>160₺</span></div>
+          <div class="flex justify-between border-b pb-1">Zeytinyağlı Yaprak Sarma <span>80₺</span></div>
+        </div>
+      </section>
+
+      <section class="border rounded-lg">
+        <button onclick="toggleMenu('anayemek')" class="w-full text-left px-4 py-3 bg-blue-100 font-semibold text-blue-900">
+          🍽️ Ana Yemekler
+        </button>
+        <div id="anayemek" class="hidden px-4 py-2 bg-white space-y-2">
+          <div class="flex justify-between border-b pb-1">Izgara Levrek <span>260₺</span></div>
+          <div class="flex justify-between border-b pb-1">Kuzu Şiş <span>250₺</span></div>
+          <div class="flex justify-between border-b pb-1">Fesleğenli Tavuk Sote <span>210₺</span></div>
+        </div>
+      </section>
+
+      <section class="border rounded-lg">
+        <button onclick="toggleMenu('tatlilar')" class="w-full text-left px-4 py-3 bg-blue-100 font-semibold text-blue-900">
+          🍰 Tatlılar
+        </button>
+        <div id="tatlilar" class="hidden px-4 py-2 bg-white space-y-2">
+          <div class="flex justify-between border-b pb-1">Fırın Sütlaç <span>60₺</span></div>
+          <div class="flex justify-between border-b pb-1">Ev Yapımı Cheesecake <span>75₺</span></div>
+          <div class="flex justify-between border-b pb-1">Baklava <span>70₺</span></div>
+        </div>
+      </section>
+
+      <section class="border rounded-lg">
+        <button onclick="toggleMenu('icecekler')" class="w-full text-left px-4 py-3 bg-blue-100 font-semibold text-blue-900">
+          🍹 İçecekler
+        </button>
+        <div id="icecekler" class="hidden px-4 py-2 bg-white space-y-2">
+          <div class="flex justify-between border-b pb-1">Limonata <span>40₺</span></div>
+          <div class="flex justify-between border-b pb-1">Türk Kahvesi <span>35₺</span></div>
+          <div class="flex justify-between border-b pb-1">Soğuk Çay <span>45₺</span></div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="text-center py-6 bg-blue-900 text-white">
+    📍 Ayvalık Sahili – ☎️ 0555 555 55 55 – © 2025 Ali'nin Restoranı
+  </footer>
+
+  <script>
+    function toggleMenu(id) {
+      const sections = ['baslangic', 'anayemek', 'tatlilar', 'icecekler'];
+      sections.forEach(section => {
+        if(section === id) {
+          document.getElementById(section).classList.toggle('hidden');
+        } else {
+          document.getElementById(section).classList.add('hidden');
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>
